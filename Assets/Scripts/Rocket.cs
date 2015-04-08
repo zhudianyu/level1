@@ -18,4 +18,11 @@ public class Rocket : MonoBehaviour {
 						Destroy (this.gameObject);
 		m_transform.Translate (new Vector3 (0, 0, -m_speed * Time.deltaTime));
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag.CompareTo ("Enemy") != 0)
+						return;
+		Destroy (this.gameObject);
+		}
 }
